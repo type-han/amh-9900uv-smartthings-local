@@ -1,0 +1,22 @@
+# tinytuya wizard output: local_key, Tuya IoT API key/secret. Never commit.
+secrets/
+devices.json
+tinytuya.json
+snapshot.json
+tuya-raw.json
+thing_model.json
+# tool logs
+logs/
+# captures
+*.pcap
+*.pcapng
+# SmartThings CLI binaries / archives
+*.exe
+*.zip
+smartthings-cli/
+# editor / python
+*.local.md
+.vscode/
+.idea/
+__pycache__/
+*.pyc

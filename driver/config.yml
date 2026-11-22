@@ -1,0 +1,6 @@
+name: 'Tuya Humidifier Local'
+packageKey: 'tuya-humidifier-local'
+description: 'AMH-9900UV (Tuya WiFi) humidifier over the Tuya local protocol 3.4 (no cloud)'
+permissions:
+  lan: {}
+  discovery: {}

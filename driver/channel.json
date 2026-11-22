@@ -1,0 +1,6 @@
+{
+  "name": "AMH-9900UV Local",
+  "type": "DRIVER",
+  "description": "AMH-9900UV (Tuya WiFi) humidifier over the Tuya local protocol 3.4 (no cloud). Unofficial.",
+  "termsOfServiceUrl": "https://github.com/type-han/amh-9900uv-smartthings-local"
+}

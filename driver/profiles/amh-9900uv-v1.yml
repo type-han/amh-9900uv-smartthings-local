@@ -1,0 +1,72 @@
+name: amh-9900uv.v1
+# v1 (2026-11-22): DP 매핑은 docs/03_PROTOCOL.md 3-3, 3-5.
+#   분무량 = level(23) + auto_mode(101)를 한 목록으로. 목표 습도 = 45–100% 목록 (앱 범위와 같음).
+#   카테고리는 main에만 (하위 컴포넌트에 카테고리를 붙이면 앱이 스위치마다 타이머를 붙임).
+#   타이머(DP 19)는 넣지 않음 (자동화로 대신).
+components:
+  - id: main
+    label: "가습기"
+    capabilities:
+      - id: switch
+        version: 1
+      - id: relativeHumidityMeasurement
+        version: 1
+      - id: refresh
+        version: 1
+    categories:
+      - name: Humidifier
+  - id: mist
+    label: "분무량"
+    capabilities:
+      - id: mode
+        version: 1
+  - id: humidityTarget
+    label: "목표 습도"
+    capabilities:
+      - id: mode
+        version: 1
+  - id: heat
+    label: "가열"
+    capabilities:
+      - id: switch
+        version: 1
+  - id: sterilize
+    label: "살균"
+    capabilities:
+      - id: switch
+        version: 1
+  - id: sleep
+    label: "취침 모드"
+    capabilities:
+      - id: switch
+        version: 1
+  - id: childLock
+    label: "차일드락"
+    capabilities:
+      - id: switch
+        version: 1
+preferences:
+  - name: ipAddress
+    title: "가습기 IP 주소"
+    description: "예) 192.168.1.50. 공유기에서 이 IP를 고정(DHCP 예약)해 두세요."
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - name: deviceId
+    title: "Device ID"
+    description: "Tuya 앱 기기 정보의 가상 ID (22자)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - name: localKey
+    title: "Local Key"
+    description: "tinytuya wizard로 받은 16자 키"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: password
+      default: ""
